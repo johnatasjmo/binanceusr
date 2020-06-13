@@ -108,7 +108,8 @@ binance_query <- function(endpoint, method = 'GET',
     }
 
     res <- query(
-        base = 'https://api.binance.com',
+        # base = 'https://api.binance.com',
+        base = 'https://api.binance.us',
         path = endpoint,
         method = method,
         params = params,

@@ -1,8 +1,14 @@
-# binancer
+# binanceUSr
+
+### Work in progress ###
+This code is based on https://github.com/daroczig/binancer package
+Use it at your own risk
+### TODO
+Change `binance.com` with `binance.us`
 
 An R client to some Cryptocurrency exchanges:
 
-* Binance API docs: https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md
+* Binance US API docs: https://github.com/binance-us/binance-official-api-docs/blob/master/rest-api.md
 * Huobi API docs: https://github.com/huobiapi/API_Docs_en/wiki
 
 Example on getting data from Binance on the most recent Bitcoin/USDT changes:
