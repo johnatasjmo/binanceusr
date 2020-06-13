@@ -87,7 +87,7 @@ binance_sign <- function(params) {
 #' @return R object
 #' @keywords internal
 #' @importFrom httr headers add_headers
-binance_query <- function(endpoint, method = 'GET',
+binanceus_query <- function(endpoint, method = 'GET',
                           params = list(), body = NULL, sign = FALSE,
                           retry = method == 'GET', content_as = 'parsed') {
 
@@ -131,8 +131,8 @@ binance_query <- function(endpoint, method = 'GET',
 #' Test connectivity to the Rest API
 #' @return list
 #' @export
-binance_ping <- function() {
-    res <- binance_query(endpoint = '/api/v1/ping')
+binanceus_ping <- function() {
+    res <- binanceus_query(endpoint = '/api/v3/ping')
     if (is.list(res) & length(res) == 0) {
         res <- 'OK'
     }
@@ -144,7 +144,7 @@ binance_ping <- function() {
 #' @return list
 #' @export
 binance_time <- function() {
-    res <- binance_query(endpoint = '/api/v1/time')$serverTime
+    res <- binance_query(endpoint = '/api/v3/time')$serverTime
     res <- as.POSIXct(res/1e3, origin = '1970-01-01')
     res
 }
@@ -166,7 +166,7 @@ binance_time <- function() {
 #' binance_klines('ETHUSDT', interval = '1h', limit = 24*7)
 #' binance_klines('ETHUSDT', interval = '1h', start_time = '2018-01-01', end_time = '2018-01-08')
 #' }
-binance_klines <- function(symbol, interval, limit, start_time, end_time) {
+binanceus_klines <- function(symbol, interval, limit, start_time, end_time) {
 
     interval <- match.arg(interval)
 
@@ -518,7 +518,7 @@ binance_avg_price <- function(symbol) {
 #' @export
 #' @importFrom jsonlite fromJSON
 binance_exchange_info <- function() {
-    res <- binance_query(endpoint = '/api/v1/exchangeInfo', content_as = 'text')
+    res <- binance_query(endpoint = '/api/v3/exchangeInfo', content_as = 'text')
     res <- fromJSON(res)
     res$serverTime <- as.POSIXct(res$serverTime/1e3, origin = '1970-01-01')
     res$rateLimits <- as.data.table(res$rateLimits)
