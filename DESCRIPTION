@@ -1,11 +1,10 @@
 Package: binanceusr
 Type: Package
 Title: Binance US API client
-Version: 0.1.0
+Version: 0.1
 Date: 2020-01-01
-Authors@R: c(
-  person("Johnatas", "Montezuma", email = "jmo@logisticsmaven.com", role = c("aut", "cre")),
-  person("jmo", "montes", email = "john@logisticsmaven.com", role = "aut"))
+Authors@R: person("Johnatas", "Montezuma", email = "jmo@logisticsmaven.com",
+                  role = c("aut", "cre"))
 Description: Client to the Binance US API
 License: AGPL
 RoxygenNote: 6.1.1
