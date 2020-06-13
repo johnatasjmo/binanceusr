@@ -1,4 +1,4 @@
-# binanceUSr
+# binanceusr
 
 ### Work in progress ###
 This code is based on https://github.com/daroczig/binancer package
